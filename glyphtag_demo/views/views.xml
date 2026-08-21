@@ -7,10 +7,11 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name" class="joo-font"/>
-                        <field name="glyph_text" string="IPAMJ明朝" class="font-ipamjm"/>
-                        <field name="glyph_text" string="DWPI明朝" class="font-dwpimincho"/>
-                        <field name="glyph_text" string="DWPI Extended明朝" class="font-dwpiexmincho"/>
+                        <field name="name"/>
+                        <field name="glyph_text"/>
+                        <field name="ucs_text" class="joo-font"/>
+                        <field name="rep_text" class="joo-font"/>
+                        <field name="glyph_set_id"/>
                     </group>
                 </sheet>
             </form>
@@ -23,8 +24,10 @@
         <field name="model">glyphtag_demo.glyph_demo</field>
         <field name="arch" type="xml">
             <list>
-                <field name="name" class="joo-font"/>
-                <field name="glyph_text" class="joo-font"/>
+                <field name="name"/>
+                <field name="glyph_text"/>
+                <field name="ucs_text" class="joo-font"/>
+                <field name="rep_text" class="joo-font"/>
             </list>
         </field>
     </record>
