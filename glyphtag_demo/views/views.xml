@@ -9,6 +9,7 @@
                     <group>
                         <field name="name"/>
                         <field name="glyph_text"/>
+                        <field name="normalized_text"/>
                         <field name="ucs_text" class="joo-font"/>
                         <field name="rep_text" class="joo-font"/>
                         <field name="glyph_set_id"/>
@@ -25,9 +26,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="glyph_text"/>
-                <field name="ucs_text" class="joo-font"/>
-                <field name="rep_text" class="joo-font"/>
+                <field name="normalized_text"/>
             </list>
         </field>
     </record>

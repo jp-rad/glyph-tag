@@ -5,16 +5,25 @@
         <field name="priority" eval="90"/>
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
+
             <xpath expr="//form" position="inside">
-                <app string="JooMjRengo" data-string="JooMjRengo" name="joo_mjrengo">
-                    <block title="Fonts">
+                <app string="Joo MJ Rengo" data-string="JooMjRengo" name="joo_mjrengo">
+
+                    <!-- Glyph System block -->
+                    <block title="Glyph System">
+                        <setting id="joo_glyph_set_setting"
+                                 help="GlyphSet（字形体系）を指定します。">
+                            <field name="joo_glyph_set_id"/>
+                        </setting>
                         <setting id="joo_font_setting"
-                                 help="フォントを指定します。">
+                                 help="class='joo-font'に適用されるフォントを指定します。">
                             <field name="joo_font"/>
                         </setting>
                     </block>
+
                 </app>
             </xpath>
+
         </field>
     </record>
 </odoo>

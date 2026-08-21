@@ -1,44 +1,59 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class GlyphDemo(models.Model):
     _name = 'glyphtag_demo.glyph_demo'
     _description = 'Glyph Tag Demo'
 
-    name = fields.Char(string="Normalized Text")
+    name = fields.Char(string='Name')
     glyph_text = fields.Char(string="Glyph Tag Text")
+    normalized_text = fields.Char(string="Normalized Text")
     ucs_text = fields.Char(string="UCS Text")
     rep_text = fields.Char(string="Representative Text")
 
     glyph_set_id = fields.Many2one(
         "joo_mjrengo.glyph_set",
         string="Glyph Set",
-        required=True,
+        required=False,
     )
 
+    # ------------------------------------------------------------
+    # バリデーション（glyph_text に対して）
+    # ------------------------------------------------------------
+    @api.constrains("glyph_text", "glyph_set_id")
+    def _check_glyph_text(self):
+        for rec in self:
+            if not rec.glyph_text:
+                continue
+
+            service = rec.env["joo_mjrengo.glyph_service"].sudo()
+
+            # ★ glyph_set_id が None → GlyphService が設定から取得する
+            result = service.normalize_tags(rec.glyph_text, rec.glyph_set_id)
+
+            if not result["success"]:
+                raise ValidationError("\n".join(result["errors"]))
+
+    # ------------------------------------------------------------
+    # onchange（例外を出さない）
+    # ------------------------------------------------------------
     @api.onchange("glyph_text", "glyph_set_id")
     def _onchange_glyph_text(self):
-        if not self.glyph_text or not self.glyph_set_id:
+
+        service = self.env["joo_mjrengo.glyph_service"].sudo()
+
+        # ★ glyph_set_id が None → GlyphService が設定から取得する
+        result = service.normalize_tags(self.glyph_text, self.glyph_set_id)
+        if not result["success"]:
             return
 
-        service = self.env["glyph.service"]
+        normalized = result["text"]
+        self.normalized_text = normalized
 
-        # 1. 正規化（補完）— エスケープ解除しない
-        normalized = service.expand_all(self.glyph_text, self.glyph_set_id)
-        self.name = normalized
+        # UCS レンダリング
+        ucs_result = service.render_text(normalized, use_rep=False, glyph_set=self.glyph_set_id)
+        self.ucs_text = ucs_result["text"] if ucs_result["success"] else False
 
-        # 2. UCS レンダリング
-        self.ucs_text = service.render_text(normalized, mode="ucs", glyph_set=self.glyph_set_id)
-
-        # 3. rep レンダリング
-        self.rep_text = service.render_text(normalized, mode="rep", glyph_set=self.glyph_set_id)
-
-    # @api.model
-    # def create(self, vals):
-    #     rec = super().create(vals)
-    #     rec._onchange_glyph_text()
-    #     return rec
-
-    # def write(self, vals):
-    #     res = super().write(vals)
-    #     self._onchange_glyph_text()
-    #     return res
+        # rep レンダリング
+        rep_result = service.render_text(normalized, use_rep=True, glyph_set=self.glyph_set_id)
+        self.rep_text = rep_result["text"] if rep_result["success"] else False
