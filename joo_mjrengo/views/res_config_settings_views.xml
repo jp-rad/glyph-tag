@@ -7,16 +7,17 @@
         <field name="arch" type="xml">
 
             <xpath expr="//form" position="inside">
-                <app string="Joo MJ Rengo" data-string="JooMjRengo" name="joo_mjrengo">
+                <app string="Joo MJ-Rengo" data-string="JooMJRengo" name="joo_mjrengo">
 
                     <!-- Glyph System block -->
                     <block title="Glyph System">
                         <setting id="joo_glyph_set_setting"
-                                 help="GlyphSet（字形体系）を指定します。">
+                                 help="Select the glyph set used for glyph tag normalization.">
                             <field name="joo_glyph_set_id"/>
                         </setting>
+
                         <setting id="joo_font_setting"
-                                 help="class='joo-font'に適用されるフォントを指定します。">
+                                 help="Select the font applied to elements using the 'joo-font' class.">
                             <field name="joo_font"/>
                         </setting>
                     </block>

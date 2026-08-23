@@ -9,9 +9,14 @@
         <field name="model">joo_mjrengo.glyph_set</field>
         <field name="arch" type="xml">
             <search string="Search Glyph Sets">
+                <!-- Basic fields -->
                 <field name="name"/>
-                <field name="version"/>
                 <field name="description"/>
+
+                <!-- OR search: name OR description -->
+                <filter string="Name or Description"
+                        name="name_or_description"
+                        domain="['|', ('name', 'ilike', self), ('description', 'ilike', self)]"/>
             </search>
         </field>
     </record>
@@ -25,7 +30,6 @@
         <field name="arch" type="xml">
             <list string="Glyph Sets">
                 <field name="name"/>
-                <field name="version"/>
                 <field name="description"/>
             </list>
         </field>
@@ -42,7 +46,6 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="version"/>
                         <field name="description"/>
                     </group>
 

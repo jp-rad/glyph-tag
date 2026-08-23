@@ -26,6 +26,7 @@ Long description of module's purpose
         'views/glyph_set_views.xml',
         'views/views.xml',
         'views/templates.xml',
+        'data/glyph_mj_plus_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
