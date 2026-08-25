@@ -12,14 +12,13 @@
                         <field name="normalized_text"/>
                         <field name="ucs_text" class="joo-font"/>
                         <field name="rep_text" class="joo-font"/>
-                        <field name="glyph_set_id"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <!-- リストビュー（Odoo19仕様） -->
+    <!-- リストビュー -->
     <record id="view_list_glyph_demo" model="ir.ui.view">
         <field name="name">glyphtag_demo.glyph_demo.list</field>
         <field name="model">glyphtag_demo.glyph_demo</field>

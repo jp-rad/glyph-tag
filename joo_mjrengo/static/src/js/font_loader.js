@@ -1,48 +1,40 @@
+/** @odoo-module **/
+
+import { rpc } from "@web/core/network/rpc";
+
+// Mapping between configuration keys and actual font-family names
+const FONT_MAP = {
+    ipamjm: "IPAmjMincho",
+    dwpimincho: "DWPIMincho",
+    dwpiexmincho: "DWPIexMincho",
+};
+
 /**
- * Font Loader for joo_mjrengo
- *
- * This module loads the configured font from the server
- * and dynamically injects a CSS rule that updates the
- * `.joo-font` class. Other modules can simply use this class
- * without knowing which font is selected.
+ * Fetch selected font from server and apply CSS.
  */
+async function loadAndApplyFont() {
+    try {
+        const fontKey = await rpc("/joo_mjrengo/font");
+        const fontFamily = FONT_MAP[fontKey] || null;
 
-odoo.define('joo_mjrengo.font_loader', function (require) {
-    'use strict';
+        if (!fontFamily) {
+            console.warn(
+                "[joo_mjrengo] Unknown font key received:",
+                fontKey
+            );
+            return;
+        }
 
-    const ajax = require('web.ajax');
+        const css = `.joo-font { font-family: "${fontFamily}", serif !important; }`;
 
-    // Mapping between configuration keys and actual font-family names
-    const FONT_MAP = {
-        ipamjm: 'IPAmjMincho',
-        dwpimincho: 'DWPIMincho',
-        dwpiexmincho: 'DWPIexMincho',
-    };
+        const style = document.createElement("style");
+        style.innerHTML = css;
+        document.head.appendChild(style);
 
-    /**
-     * Fetch selected font from server and apply CSS.
-     */
-    ajax.rpc('/joo_mjrengo/font')
-        .then(function (fontKey) {
-            const fontFamily = FONT_MAP[fontKey] || null;
+        console.debug("[joo_mjrengo] Applied font:", fontFamily);
+    } catch (err) {
+        console.error("[joo_mjrengo] Failed to load font configuration:", err);
+    }
+}
 
-            if (!fontFamily) {
-                console.warn(
-                    '[joo_mjrengo] Unknown font key received:',
-                    fontKey
-                );
-                return;
-            }
-
-            const css = `.joo-font { font-family: "${fontFamily}", serif !important; }`;
-
-            const style = document.createElement('style');
-            style.innerHTML = css;
-            document.head.appendChild(style);
-
-            console.debug('[joo_mjrengo] Applied font:', fontFamily);
-        })
-        .catch(function (err) {
-            console.error('[joo_mjrengo] Failed to load font configuration:', err);
-        });
-});
+loadAndApplyFont();
