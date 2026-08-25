@@ -1,1 +1,2 @@
-
+mjrengo @ git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=mjrengo
+mjrengo_data_mj @ git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=mjrengo_data_mj
