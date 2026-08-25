@@ -7,13 +7,13 @@
         <field name="arch" type="xml">
 
             <xpath expr="//form" position="inside">
-                <app string="Joo MJ-Rengo" data-string="JooMJRengo" name="joo_mjrengo">
+                <app string="MJ-Rengo" data-string="joo_mjrengo" name="joo_mjrengo">
 
                     <!-- Glyph System block -->
                     <block title="Glyph System">
-                        <setting id="joo_glyph_set_setting"
+                        <setting id="joo_set_setting"
                                  help="Select the glyph set used for glyph tag normalization.">
-                            <field name="joo_glyph_set_id"/>
+                            <field name="joo_set"/>
                         </setting>
 
                         <setting id="joo_font_setting"
