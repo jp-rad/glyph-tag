@@ -1,30 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
-<!--
-          <record id="object0" model="glyphtag_demo.glyphtag_demo">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
 
-          <record id="object1" model="glyphtag_demo.glyphtag_demo">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
+    <!-- ========================================================= -->
+    <!-- 東京都葛飾区 MJ022336                                    -->
+    <!-- ========================================================= -->
+    <record id="demo_glyph_tokyo_katsushika" model="glyphtag_demo.glyph_demo">
+        <field name="name">デモ - 東京都葛飾区 {MJ022336} &lt;845B,E0103&gt;</field>
+        <field name="glyph_text">東京都{MJ022336}飾区 {{MJ022336} &lt;845B,E0103&gt;</field>
 
-          <record id="object2" model="glyphtag_demo.glyphtag_demo">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
+        <field name="normalized_text">東京都{MJ022336 ucs=U+845B U+E0103 rep=U+845B set=mj_plus}飾区 {{MJ022336} &lt;845B,E0103&gt;</field>
 
-          <record id="object3" model="glyphtag_demo.glyphtag_demo">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
+        <field name="ucs_text">東京都葛飾区 {MJ022336} &lt;845B,E0103&gt;</field>
+        <field name="rep_text">東京都葛飾区 {MJ022336} &lt;845B,E0103&gt;</field>
+    </record>
 
-          <record id="object4" model="glyphtag_demo.glyphtag_demo">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
-    </data>
+
+    <!-- ========================================================= -->
+    <!-- 奈良県葛城市 MJ022335                                    -->
+    <!-- ========================================================= -->
+    <record id="demo_glyph_nara_katsuragi" model="glyphtag_demo.glyph_demo">
+        <field name="name">デモ - 奈良県葛城市 {MJ022335} &lt;845B,E0102&gt;</field>
+        <field name="glyph_text">奈良県{MJ022335}城市 {{MJ022335} &lt;845B,E0102&gt;</field>
+
+        <field name="normalized_text">奈良県{MJ022335 ucs=U+845B U+E0102 rep=U+845B set=mj_plus}城市 {{MJ022335} &lt;845B,E0102&gt;</field>
+
+        <field name="ucs_text">奈良県葛城市 {MJ022335} &lt;845B,E0102&gt;</field>
+        <field name="rep_text">奈良県葛城市 {MJ022335} &lt;845B,E0102&gt;</field>
+    </record>
+
 </odoo>

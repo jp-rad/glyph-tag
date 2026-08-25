@@ -48,7 +48,8 @@ services:
       dockerfile: nginx/Dockerfile
       args:
         # Generate self-signed SSL certificate and key
-        SSL_DAYS: "36500"
+        # SSL_DAYS: "36500"
+        SSL_DAYS: "365"
         SSL_SUBJECT: "/C=JP/ST=Tokyo/L=City/O=Example/OU=Dev/CN=localhost"
     volumes:
     - ./nginx/conf.d:/etc/nginx/conf.d:cached

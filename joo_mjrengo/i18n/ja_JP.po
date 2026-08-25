@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-23 00:46+0000\n"
-"PO-Revision-Date: 2026-08-23 00:46+0000\n"
+"POT-Creation-Date: 2026-08-25 10:29+0000\n"
+"PO-Revision-Date: 2026-08-25 10:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,26 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__active
-msgid "Active"
-msgstr "アクティブ"
-
-#. module: joo_mjrengo
 #: model:ir.model,name:joo_mjrengo.model_res_config_settings
 msgid "Config Settings"
-msgstr "設定"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__create_uid
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__create_uid
-msgid "Created by"
-msgstr ""
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__create_date
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__create_date
-msgid "Created on"
-msgstr ""
+msgstr "構成設定"
 
 #. module: joo_mjrengo
 #: model:ir.model.fields.selection,name:joo_mjrengo.selection__res_config_settings__joo_font__dwpiexmincho
@@ -48,28 +31,10 @@ msgid "DWPI Mincho"
 msgstr "DWPI明朝"
 
 #. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__description
-msgid "Description"
-msgstr "説明"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__display_name
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_service__display_name
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__display_name
+#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_mj_service__display_name
 #: model:ir.model.fields,field_description:joo_mjrengo.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr "表示名"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__entry_ids
-#: model_terms:ir.ui.view,arch_db:joo_mjrengo.view_form_glyph_set
-msgid "Glyph Entries"
-msgstr "登録字形"
-
-#. module: joo_mjrengo
-#: model:ir.model,name:joo_mjrengo.model_joo_mjrengo_glyph_entry
-msgid "Glyph Entry"
-msgstr "登録字形"
 
 #. module: joo_mjrengo
 #: model:ir.model.fields,field_description:joo_mjrengo.field_res_config_settings__joo_font
@@ -77,45 +42,17 @@ msgid "Glyph Font"
 msgstr "字形フォント"
 
 #. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__name
-msgid "Glyph Name"
-msgstr "字形名"
-
-#. module: joo_mjrengo
-#: model:ir.model,name:joo_mjrengo.model_joo_mjrengo_glyph_set
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__set_id
-#: model:ir.model.fields,field_description:joo_mjrengo.field_res_config_settings__joo_glyph_set_id
-#: model_terms:ir.ui.view,arch_db:joo_mjrengo.view_form_glyph_set
+#: model:ir.model.fields,field_description:joo_mjrengo.field_res_config_settings__joo_set
 msgid "Glyph Set"
-msgstr "字形セット"
+msgstr "字形体系"
 
 #. module: joo_mjrengo
-#: model:ir.actions.act_window,name:joo_mjrengo.action_glyph_set
-#: model:ir.ui.menu,name:joo_mjrengo.menu_glyph_set
-#: model_terms:ir.ui.view,arch_db:joo_mjrengo.view_list_glyph_set
-msgid "Glyph Sets"
-msgstr "字形セット"
-
-#. module: joo_mjrengo
-#: model:ir.ui.menu,name:joo_mjrengo.menu_glyph_root
 #: model_terms:ir.ui.view,arch_db:joo_mjrengo.res_config_settings_view_form
 msgid "Glyph System"
 msgstr "字形システム"
 
 #. module: joo_mjrengo
-#: model:ir.model,name:joo_mjrengo.model_joo_mjrengo_glyph_service
-msgid "Glyph Tag Normalization and Rendering Service"
-msgstr "字形タグの正規化と文字化サービス"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_joo_mjrengo_glyph_entry__set_id
-msgid "Glyph set to which this entry belongs."
-msgstr "登録字形が属する体系"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__id
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_service__id
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__id
+#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_mj_service__id
 #: model:ir.model.fields,field_description:joo_mjrengo.field_res_config_settings__id
 msgid "ID"
 msgstr ""
@@ -126,66 +63,24 @@ msgid "IPAmj Mincho"
 msgstr "IPAmj明朝"
 
 #. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_joo_mjrengo_glyph_entry__name
-msgid "Identifier of the glyph entry (e.g., 'MJ0001')."
-msgstr "登録字形の識別子（例：'MJ0001'）。"
+#: model:ir.model.fields.selection,name:joo_mjrengo.selection__res_config_settings__joo_set__mj
+msgid "MJ"
+msgstr "文字情報基盤（MJ）"
 
 #. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_joo_mjrengo_glyph_set__name
-msgid "Identifier of the glyph set (e.g., 'mj_plus')."
-msgstr "字形体系の識別子（例：'mj_plus'）。"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_joo_mjrengo_glyph_entry__active
-msgid "If unchecked, this glyph entry is archived and will not be used."
-msgstr "チェックを外すと、このグリフエントリはアーカイブされ使用されません。"
+#: model:ir.model.fields.selection,name:joo_mjrengo.selection__res_config_settings__joo_set__mj_plus
+msgid "MJ+"
+msgstr "行政事務標準文字（MJ+）"
 
 #. module: joo_mjrengo
 #: model_terms:ir.ui.view,arch_db:joo_mjrengo.res_config_settings_view_form
-msgid "Joo MJ-Rengo"
-msgstr "Joo MJ連合"
+msgid "MJ-Rengo"
+msgstr "MJ連合"
 
 #. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__write_uid
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__write_uid
-msgid "Last Updated by"
+#: model:ir.model,name:joo_mjrengo.model_joo_mjrengo_mj_service
+msgid "Mjrengo Tag Normalization and Rendering Service"
 msgstr ""
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__write_date
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__write_date
-msgid "Last Updated on"
-msgstr ""
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_joo_mjrengo_glyph_set__entry_ids
-msgid "List of glyph entries belonging to this glyph set."
-msgstr "この字形体系に属する登録字形の一覧。"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__name
-msgid "Name"
-msgstr "名称"
-
-#. module: joo_mjrengo
-#: model_terms:ir.ui.view,arch_db:joo_mjrengo.view_search_glyph_set
-msgid "Name or Description"
-msgstr "名称または説明"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__rep
-msgid "Representative UCS"
-msgstr "代表文字のUCS"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_joo_mjrengo_glyph_entry__rep
-msgid "Representative UCS codepoint (e.g., 'U+4E00')."
-msgstr "代表文字のUCSコードポイント（例：'U+4E00'）。"
-
-#. module: joo_mjrengo
-#: model_terms:ir.ui.view,arch_db:joo_mjrengo.view_search_glyph_set
-msgid "Search Glyph Sets"
-msgstr "字形体系を検索"
 
 #. module: joo_mjrengo
 #: model_terms:ir.ui.view,arch_db:joo_mjrengo.res_config_settings_view_form
@@ -195,35 +90,10 @@ msgstr "'joo-font'クラスに適用されるフォントを選択します。"
 #. module: joo_mjrengo
 #: model:ir.model.fields,help:joo_mjrengo.field_res_config_settings__joo_font
 msgid "Select the font used for glyph rendering."
-msgstr "字形描画に使用するフォントを選択します。"
+msgstr "字形の描画に使用するフォントを選択します。"
 
 #. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_res_config_settings__joo_glyph_set_id
+#: model:ir.model.fields,help:joo_mjrengo.field_res_config_settings__joo_set
 #: model_terms:ir.ui.view,arch_db:joo_mjrengo.res_config_settings_view_form
 msgid "Select the glyph set used for glyph tag normalization."
 msgstr "字形タグの正規化に使用する字形体系を選択します。"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_joo_mjrengo_glyph_set__description
-msgid "Short description of the glyph set."
-msgstr "字形体系の簡単な説明。"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_entry__ucs
-msgid "UCS Sequence"
-msgstr "UCS シーケンス"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_joo_mjrengo_glyph_entry__ucs
-msgid "UCS codepoints for this glyph (e.g., 'U+4E00 U+E0100')."
-msgstr "この字形の UCS コードポイント（例：'U+4E00 U+E0100'）。"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,field_description:joo_mjrengo.field_joo_mjrengo_glyph_set__version
-msgid "Version"
-msgstr "Version"
-
-#. module: joo_mjrengo
-#: model:ir.model.fields,help:joo_mjrengo.field_joo_mjrengo_glyph_set__version
-msgid "Version string of the glyph set."
-msgstr "字形体系のバージョン文字列。"
