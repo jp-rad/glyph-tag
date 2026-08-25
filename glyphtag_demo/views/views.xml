@@ -1,0 +1,45 @@
+<odoo>
+    <!-- フォームビュー -->
+    <record id="view_form_glyph_demo" model="ir.ui.view">
+        <field name="name">glyphtag_demo.glyph_demo.form</field>
+        <field name="model">glyphtag_demo.glyph_demo</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="glyph_text"/>
+                        <field name="normalized_text"/>
+                        <field name="ucs_text" class="joo-font"/>
+                        <field name="rep_text" class="joo-font"/>
+                        <field name="glyph_set_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- リストビュー（Odoo19仕様） -->
+    <record id="view_list_glyph_demo" model="ir.ui.view">
+        <field name="name">glyphtag_demo.glyph_demo.list</field>
+        <field name="model">glyphtag_demo.glyph_demo</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="normalized_text"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- アクション -->
+    <record id="action_glyph_demo" model="ir.actions.act_window">
+        <field name="name">GlyphTag Demo</field>
+        <field name="res_model">glyphtag_demo.glyph_demo</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- メニュー -->
+    <menuitem id="menu_glyph_demo_root" name="GlyphTag Demo"/>
+    <menuitem id="menu_glyph_demo" parent="menu_glyph_demo_root"
+              action="action_glyph_demo" name="Demo"/>
+</odoo>

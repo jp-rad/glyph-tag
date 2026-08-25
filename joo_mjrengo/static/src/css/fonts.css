@@ -1,0 +1,48 @@
+/**
+ * Font definitions for joo_mjrengo module.
+ *
+ * These fonts are used for administrative glyph rendering.
+ * The `.joo-font` class is dynamically overridden by JS
+ * depending on the configuration selected in Settings.
+ */
+
+@font-face {
+    font-family: "IPAmjMincho";
+    src: url("/joo_mjrengo/static/src/fonts/ipamjm.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DWPIMincho";
+    src: url("/joo_mjrengo/static/src/fonts/DWPIMincho.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DWPIexMincho";
+    src: url("/joo_mjrengo/static/src/fonts/DWPIexMincho.ttf") format("truetype");
+}
+
+/**
+ * Fixed font classes.
+ * Other modules may use these directly when they want
+ * to force a specific font regardless of configuration.
+ */
+.font-ipamjm {
+    font-family: "IPAmjMincho", serif !important;
+}
+
+.font-dwpimincho {
+    font-family: "DWPIMincho", serif !important;
+}
+
+.font-dwpiexmincho {
+    font-family: "DWPIexMincho", serif !important;
+}
+
+/**
+ * Dynamic font class.
+ * This is the default font, but it will be overridden
+ * by font_loader.js based on user configuration.
+ */
+.joo-font {
+    font-family: "IPAmjMincho", serif !important;
+}

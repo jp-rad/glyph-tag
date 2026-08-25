@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_joo_mjrengo_glyph_set,joo_mjrengo.glyph_set,model_joo_mjrengo_glyph_set,base.group_system,1,1,1,1
+access_joo_mjrengo_glyph_entry,joo_mjrengo.glyph_entry,model_joo_mjrengo_glyph_entry,base.group_system,1,1,1,1
