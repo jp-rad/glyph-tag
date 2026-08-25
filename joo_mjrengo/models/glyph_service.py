@@ -12,10 +12,10 @@ class GlyphService(models.AbstractModel):
         conf = self.env['ir.config_parameter'].sudo()
         set_name=conf.get_param('joo_mjrengo.set', 'mj_plus'),
 
-        if set_name=='mj_plus':
-            fn = make_replace_fn(glyph_table_mj_plus, set_name)
+        if set_name and set_name[0] == 'mj_plus':
+            fn = make_replace_fn(glyph_table_mj_plus, "mj_plus")
         else:
-            fn = make_replace_fn(glyph_table_mj, set_name)
+            fn = make_replace_fn(glyph_table_mj, "mj")
         
         return GlyphTagEngine(fn)
 
