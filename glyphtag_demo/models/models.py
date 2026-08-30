@@ -44,4 +44,4 @@ class GlyphDemo(models.Model):
         
         self.normalized_text = normalized
         self.ucs_text = service.render_text(normalized)
-        self.rep_text = service.render_text(normalized, use_rep=True)
+        self.rep_text = service.render_text(normalized, use_base=True)

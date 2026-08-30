@@ -17,7 +17,8 @@
                 "--db_user=${env:DB_USER}",
                 "--db_password=${env:DB_PASSWORD}",
                 "--database=${env:DB_NAME}",
-                "--limit-time-real=100000"
+                "--limit-time-real=100000",
+                // "-i base ${env:DB_NAME}", // reset odoo database
             ],
             "console": "integratedTerminal"
         },
