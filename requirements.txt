@@ -1,3 +1,10 @@
-mjrengo @ git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=mjrengo
-mjrengo_data_mj @ git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=mjrengo_data_mj
-mjrengo_data_mj_plus @ git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=mjrengo_data_mj_plus
+# mjrengo
+mjrengo@git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=mjrengo
+mjrengo-data-mj_plus-v4_10@git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=glyph/mj_plus-v4_10
+mjrengo-data-mj_plusx-v1_20@git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=glyph/mj_plusx-v1_20
+mjrengo-data-mj-v6_02_201@git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=glyph/mj-v6_02_201
+mjrengo-data-mj-v6_02_201_onka@git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=glyph/mj-v6_02_201_onka
+
+# mjrengo @ git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=mjrengo
+# mjrengo_data_mj @ git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=mjrengo_data_mj
+# mjrengo_data_mj_plus @ git+https://github.com/jp-rad/mjrengo.git@main#subdirectory=mjrengo_data_mj_plus

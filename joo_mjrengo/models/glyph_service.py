@@ -1,8 +1,6 @@
 from odoo import models
+from mjrengo.builder import build_engine
 from mjrengo.engine import GlyphTagEngine, GlyphResult
-from mjrengo.replace import make_replace_fn
-from mjrengo.data.mj import glyph_table as glyph_table_mj
-from mjrengo.data.mj_plus import glyph_table as glyph_table_mj_plus
 
 class GlyphService(models.AbstractModel):
     _name = "joo_mjrengo.glyph_service"
@@ -10,22 +8,21 @@ class GlyphService(models.AbstractModel):
 
     def _get_engine(self) -> GlyphTagEngine:
         conf = self.env['ir.config_parameter'].sudo()
-        set_name=conf.get_param('joo_mjrengo.set', 'mj_plus'),
+        param_set=conf.get_param('joo_mjrengo.set', 'mj_plus'),
 
-        if set_name and set_name[0] == 'mj_plus':
-            fn = make_replace_fn(glyph_table_mj_plus, "mj_plus")
+        if param_set and param_set[0] == 'mj_plus':
+            engine = build_engine("mj_plus", "4.10")
         else:
-            fn = make_replace_fn(glyph_table_mj, "mj")
-        
-        return GlyphTagEngine(fn)
+            engine = build_engine("mj_plusx", "1.20")
+        return engine
 
     def normalize_tags(self, text) -> GlyphResult:
         engine = self._get_engine()
         result = engine.normalize_tags(text)
         return result
 
-    def render_text(self, text, use_rep=False) -> str:
+    def render_text(self, text, use_base=False) -> str:
         engine = self._get_engine()
 
-        result = engine.render_text(text, use_rep=use_rep)
+        result = engine.render_text(text, use_base=use_base)
         return result
