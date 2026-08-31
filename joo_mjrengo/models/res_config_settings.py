@@ -12,6 +12,7 @@ class ResConfigSettings(models.TransientModel):
         [
             ('mj', 'MJ'),
             ('mj_plus', 'MJ+'),
+            ('mj_plusx', 'MJ+ex'),
         ],
         string="Glyph Set",
         default="mj_plus",
