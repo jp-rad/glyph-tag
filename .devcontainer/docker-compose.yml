@@ -1,16 +1,19 @@
 version: '2'
+
 services:
   app:
     image: "odoo-addons-dev:19.0"
-    #container_name: "app"
     build:
       context: "."
       dockerfile: odoo/Dockerfile
       args:
-        # Update 'ODOO_VERSION' to pick a odoo version: master, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0
+        # Odoo version to build
         ODOO_VERSION: "19.0"
+
+        # Enable RTL CSS support
         SUPPORT_RTLCSS: "true"
-        # Update 'VARIANT' to pick a Python version: 3, 3.10, 3.11, 3.12
+
+        # Python version variant
         # Available image variants: https://github.com/microsoft/vscode-dev-containers/blob/main/containers/python-3/README.md
         VARIANT: "3"
     volumes:
@@ -23,15 +26,15 @@ services:
       - ./odoo/.pulintrc:/home/vscode/.pylintrc:cached
     env_file:
       - ./odoo/odoo.env
-    depends_on: 
+    depends_on:
       - db
       - lb
     tty: true
     command: bash
     entrypoint: /opt/odoo/entrypoint.sh
+
   db:
-    image: postgres:12
-    #container_name: "db"
+    image: postgres:13
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
@@ -40,22 +43,30 @@ services:
       - "5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
+
   lb:
     image: nginx:alpine
-    #container_name: "lb"
     build:
       context: "."
       dockerfile: nginx/Dockerfile
       args:
-        # Generate self-signed SSL certificate and key
-        # SSL_DAYS: "36500"
+        # Number of days the generated certificates remain valid
         SSL_DAYS: "365"
-        SSL_SUBJECT: "/C=JP/ST=Tokyo/L=City/O=Example/OU=Dev/CN=localhost"
+        # # Unified subject base used for both Root CA and server certificates
+        # BASE_SUBJECT: "/C=JP/ST=Origami/L=Layer/O=ValleyMountain/OU=StackGeometry"
     volumes:
-    - ./nginx/conf.d:/etc/nginx/conf.d:cached
+      - ./nginx/conf.d:/etc/nginx/conf.d:cached
     ports:
-    - 80:80
-    - 443:443
+      - "80:80"
+      - "443:443"
+    # -------------------------------------------------------
+    # Manual certificate regeneration:
+    # Open Docker Desktop → select 'lb' → Terminal → run:
+    #
+    #   sh -c "/usr/local/bin/rebuild-certs.sh"
+    #
+    # -------------------------------------------------------
+
 volumes:
   odoo-data:
   postgres-data:
